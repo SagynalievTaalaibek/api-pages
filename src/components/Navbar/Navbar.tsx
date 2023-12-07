@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { pages } from '../../constant';
 
 const Navbar = () => {
-  const pages: string[] = ['home', 'about', 'contacts', 'favorite', 'product', 'admin'];
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
