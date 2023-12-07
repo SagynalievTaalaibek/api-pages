@@ -1,8 +1,18 @@
+import Navbar from './components/Navbar/Navbar';
+import { Route, Routes } from 'react-router-dom';
+
 const App = () => {
   return (
-    <div>
-      Hello world
-    </div>
+    <>
+      <header className="bg-body-secondary">
+        <Navbar/>
+      </header>
+      <main className="container">
+        <Routes>
+          <Route />
+        </Routes>
+      </main>
+    </>
   );
 };
 
