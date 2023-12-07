@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { useCallback, useEffect, useState } from 'react';
 import axiosApi from '../../axiosApi';
 import Spinner from '../../components/Spinner/Spinner';
-import { ApiPage, Page } from '../../types';
+import { Page } from '../../types';
 
 const PageContent = () => {
   const location = useLocation();
@@ -13,11 +13,11 @@ const PageContent = () => {
   const fetchData = useCallback(async () => {
     try {
       serLoading(true);
-      const responsePages = await axiosApi.get<ApiPage | null>('pages.json');
+      const responsePages = await axiosApi.get<Page>('pages/' + path + '.json');
       const pages = responsePages.data;
 
       if (pages) {
-        setPage(pages[path]);
+        setPage(pages);
       }
     } catch (error) {
       alert('Error' + error);
@@ -34,7 +34,7 @@ const PageContent = () => {
   if (page) {
     content = (
       <div>
-        <h5>{page.title}</h5>
+        <h4>{page.title}</h4>
         <p>{page.content}</p>
       </div>
     );

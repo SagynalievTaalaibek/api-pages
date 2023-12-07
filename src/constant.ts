@@ -1,1 +1,1 @@
-export const pages: string[] = ['home', 'about', 'contacts', 'favorite', 'product', 'admin'];
+export const pages: string[] = ['home', 'about', 'contacts', 'favorite', 'product'];

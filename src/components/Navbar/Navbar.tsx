@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className='container'>
       <nav className='navbar navbar-expand-lg'>
         <div className='container-fluid'>
-          <a className='navbar-brand' href='/'>
+          <a className='navbar-brand' href='/pages/home'>
             Static Pages
           </a>
           <button className='navbar-toggler' type='button' onClick={toggleMenu}>
@@ -35,6 +35,18 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               ))}
+              <li className='nav-item' onClick={() => setIsOpen(false)}>
+                <NavLink
+                  to={'/pages/admin'}
+                  className={({ isActive, isPending }) =>
+                    `nav-link ${
+                      isPending ? 'pending' : isActive ? 'active' : ''
+                    }`
+                  }
+                >
+                  Admin
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
